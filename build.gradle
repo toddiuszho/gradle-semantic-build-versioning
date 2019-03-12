@@ -1,10 +1,10 @@
-import net.vivin.gradle.versioning.tasks.TagTask
+// import net.vivin.gradle.versioning.tasks.TagTask
 
 plugins {
     // build scan plugin should be the first in the list to not loose important information in the scans
-    id 'com.gradle.build-scan' version '1.5'
+    id 'com.gradle.build-scan' version '2.2.1'
     id 'com.gradle.plugin-publish' version '0.9.4'
-    id 'net.vivin.gradle-semantic-build-versioning' version '3.0.2' apply false
+    // id 'net.vivin.gradle-semantic-build-versioning' version '3.0.2' apply false
     id 'groovy'
     id 'maven-publish'
     id 'jacoco'
@@ -12,15 +12,15 @@ plugins {
 }
 
 buildScan {
-    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
-    licenseAgree = 'yes'
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
 }
 
 group 'net.vivin'
 
-tasks.withType(TagTask) {
+/* tasks.withType(TagTask) {
     it.dependsOn publishPlugins
-}
+} */
 publishPlugins.dependsOn build
 
 repositories {
