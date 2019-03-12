@@ -27,7 +27,7 @@ repositories {
     jcenter()
 }
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 project.ext.'gradle.publish.key' = System.env.PUBLISH_KEY
 project.ext.'gradle.publish.secret' = System.env.PUBLISH_SECRET
